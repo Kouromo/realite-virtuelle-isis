@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
 
 public class gestionObject : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class gestionObject : MonoBehaviour
         if (obj == null) return;
 
         // Récupérer tous les Text dans les enfants
-        Text[] texts = obj.GetComponentsInChildren<Text>();
+        TextMeshProUGUI[] texts = obj.GetComponentsInChildren<TextMeshProUGUI>();
 
         // On suppose : 
         // texts[0] = nom
@@ -55,7 +56,7 @@ public class gestionObject : MonoBehaviour
         }
 
         // Assigner l'image
-        Image img = obj.GetComponentInChildren<Image>();
+        Image img = obj.transform.Find("image_object").GetComponent<Image>();
         if (img != null)
         {
             img.sprite = data.image;
