@@ -22,9 +22,23 @@ public class gestionObject : MonoBehaviour
 
     private int index = 0;
 
+    public CardInteraction card;
+
+    public CardSensor sensor;
+
+    bool choix_possible = false;
+
     void Start()
     {
         AfficherPaire();
+    }
+
+    void FixedUpdate()
+    {
+        if (card.money == 0)
+        {
+            choix_possible = true;
+        }
     }
 
     void AfficherPaire()
@@ -68,19 +82,26 @@ public class gestionObject : MonoBehaviour
     // ---------- MÉTHODES PUBLIQUES POUR CHOISIR ----------
     public void ChoisirObjet1()
     {
-        Debug.Log("Objet choisi : index " + index);
-        PasserALaSuite();
+        if (choix_possible)
+        {
+            sensor.Value = int.Parse(list_objets[index].chip);
+            PasserALaSuite();
+        }
     }
 
     public void ChoisirObjet2()
     {
-        Debug.Log("Objet choisi : index " + (index + 1));
-        PasserALaSuite();
+        if (choix_possible)
+        {
+            sensor.Value = int.Parse(list_objets[index+1].chip);
+            PasserALaSuite();
+        }
     }
 
     void PasserALaSuite()
     {
         index += 2;
+
         AfficherPaire();
     }
 }
