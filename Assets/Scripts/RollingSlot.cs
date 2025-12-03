@@ -8,7 +8,6 @@ public class RollingSlot : MonoBehaviour
 
     private float angleCranCalibrate = 50;
 
-    
 
     public GameObject[] rollers;
 
@@ -20,6 +19,7 @@ public class RollingSlot : MonoBehaviour
     public float durationRotationMax = 3f;
 
     private float durationStop = 1;
+    private float durationStopCurrent = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
