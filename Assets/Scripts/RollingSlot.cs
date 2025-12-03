@@ -20,6 +20,9 @@ public class RollingSlot : MonoBehaviour
 
     private float durationStop = 1;
 
+    [Header("Sound")]
+    public AudioSource stopSound;
+
     // guard to avoid starting multiple spin sessions
     private bool isSpinning = false;
     private int remainingRollers = 0;
@@ -106,7 +109,8 @@ public class RollingSlot : MonoBehaviour
         Vector3 rotationFinalePrecise = new(rotationTotaleCible % 360f, rotationFinale.y, rotationFinale.z);
         rouleau.transform.localEulerAngles = rotationFinalePrecise;
 
-        // mark this roller finished and clear spinning flag when all done
+        if (stopSound != null)
+            stopSound.Play();
         remainingRollers--;
         if (remainingRollers <= 0)
         {
