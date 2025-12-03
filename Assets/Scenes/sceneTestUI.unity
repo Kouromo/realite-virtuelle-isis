@@ -872,6 +872,17 @@ RectTransform:
   m_AnchoredPosition: {x: -1, y: 2}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &704085839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2850127193780839673, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+  m_PrefabInstance: {fileID: 1732098286}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c64f9dad0309c4c947845987ec027b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardSensor
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +932,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &971458664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.816
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784992592670087671, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_Name
+      value: CardSensor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850127193780839673, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: Value
+      value: -100
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
 --- !u!1001 &1112882588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1352,7 +1424,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6429411168986124491, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -1440,6 +1513,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373369174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
+  m_PrefabInstance: {fileID: 1112882588}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9459580aedc3f0e45a94af156911d5b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardInteraction
 --- !u!1 &1499250259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2279,8 @@ MonoBehaviour:
       p\xE9ch\xE9s de l\u2019humanit\xE9"
     chip: 10000
     image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
+  card: {fileID: 1373369174}
+  sensor: {fileID: 704085839}
 --- !u!4 &1993584626
 Transform:
   m_ObjectHideFlags: 0
@@ -2422,4 +2508,5 @@ SceneRoots:
   - {fileID: 1149087048}
   - {fileID: 1993584626}
   - {fileID: 1732098286}
+  - {fileID: 971458664}
   - {fileID: 1112882588}

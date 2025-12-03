@@ -71,7 +71,14 @@ public class CardInteraction : MonoBehaviour
 
     private void ModifyMoney(int value)
     {
+        if (value > money)
+        {
+            money = 0;
+        }
+        else
+        {
         money += value;
+        }
         moneyText.text = money.ToString();
     }
 
