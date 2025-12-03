@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771855989053732674}
   - component: {fileID: 2259336937930477993}
+  - component: {fileID: -1950508830019528819}
   m_Layer: 0
   m_Name: slot
   m_TagString: Untagged
@@ -132,6 +133,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1950508830019528819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431358595081072120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eb4d55fab32a848af5fd155bb9a6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InterpreteResult
+  rollers:
+  - {fileID: 2598223952156984371}
+  - {fileID: 5860340489333073116}
+  - {fileID: 8061317672446352392}
+  - {fileID: 3452570071826720864}
 --- !u!1 &2531299833829046388
 GameObject:
   m_ObjectHideFlags: 0
