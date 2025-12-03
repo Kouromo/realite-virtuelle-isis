@@ -39,7 +39,7 @@ public class RollingSlot : MonoBehaviour
 
     public void PullLever()
     {
-        if (isSpinning)
+        if (isSpinning || !canRoll)
             return;
 
         if (rollers == null || rollers.Length == 0)
@@ -55,6 +55,7 @@ public class RollingSlot : MonoBehaviour
         if (remainingRollers == 0)
         {
             isSpinning = false;
+            canRoll = false;
             return;
         }
 
