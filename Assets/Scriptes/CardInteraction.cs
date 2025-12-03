@@ -10,7 +10,7 @@ public class CardInteraction : MonoBehaviour
 {
     [Header("Monetary System")]
     public int money = 100;
-    public float amplitude = 0.7f; // intensité [0-1]  
+    public float amplitude = 1f; // intensité [0-1]  
     public float duration = 0.4f;  // en secondes  
     public TMP_Text moneyText;
     public GameObject manetteDroite;
