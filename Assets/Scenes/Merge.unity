@@ -1648,6 +1648,10 @@ PrefabInstance:
       value: CardSensor
       objectReference: {fileID: 0}
     - target: {fileID: 2850127193780839673, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: Value
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850127193780839673, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
       propertyPath: rollingSlot
       value: 
       objectReference: {fileID: 1009944120}
