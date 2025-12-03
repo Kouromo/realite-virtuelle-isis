@@ -1934,34 +1934,33 @@ MonoBehaviour:
   - nom: Alliance de ton/ta conjoint(e)
     description: Vous allez vous faire quitter
     chip: 250
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 3af8a0dca68865c4e84822975571d059, type: 3}
   - nom: Enfant
     description: Ton/ta conjoint(e) va vous quitter pour le garagiste
     chip: 1000
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 5de5f159eee00364d97d4ee832e4d6b8, type: 3}
   - nom: Voiture de ton/ta conjoint(e)
     description: Ton/ta conjoint(e) va vous quitter pour le garagiste
     chip: 250
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: ed782be8ac7ab3a40a217fa97f8f568d, type: 3}
+  - nom: Vente de rein
+    description: "Vous devez uriner toute les minutes et vous avez de grave probl\xE8me
+      de sant\xE9"
+    chip: 500
+    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
   - nom: "Hypoth\xE9que de la maison"
     description: "Vous abandonnez votre enfant \xE0 un dangereux r\xE9seau Albanais "
     chip: 1000
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 2a984b074472ab047975dbbd213c86fc, type: 3}
   - nom: "Sacrifier son \xE2me"
     description: "Vous condamnez vous et votre famille au purgatoire pour tous les
       p\xE9ch\xE9s de l\u2019humanit\xE9"
     chip: 10000
     image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
-  - nom: "Sacrifier son \xE2me"
-    description: "Vous condamnez vous et votre famille au purgatoire pour tous les
-      p\xE9ch\xE9s de l\u2019humanit\xE9"
-    chip: 10000
-    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
-  - nom: "Sacrifier son \xE2me"
-    description: "Vous condamnez vous et votre famille au purgatoire pour tous les
-      p\xE9ch\xE9s de l\u2019humanit\xE9"
-    chip: 10000
-    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
+  - nom: "M\xE9dicaments essentiels \xE0 ton p\xE8re"
+    description: "Votre p\xE8re risque de rendre l\u2019\xE2me"
+    chip: 500
+    image: {fileID: 21300000, guid: 4d5c75e79c9c28740b5bc955f738a138, type: 3}
 --- !u!4 &1993584626
 Transform:
   m_ObjectHideFlags: 0
