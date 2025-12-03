@@ -582,6 +582,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5073513767926344731, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 515340674}
     - targetCorrespondingSourceObject: {fileID: 9141619668489993513, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1312658871}
@@ -592,6 +595,48 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1312658869}
   m_SourcePrefab: {fileID: 100100000, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+--- !u!1 &515340669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5073513767926344731, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+  m_PrefabInstance: {fileID: 515340668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &515340670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8817052852501326211, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+  m_PrefabInstance: {fileID: 515340668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &515340671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4209182696807701995, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+  m_PrefabInstance: {fileID: 515340668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &515340672 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 351725295684199743, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+  m_PrefabInstance: {fileID: 515340668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &515340673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8195203328904611280, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+  m_PrefabInstance: {fileID: 515340668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &515340674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515340669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eb4d55fab32a848af5fd155bb9a6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InterpreteResult
+  rollers:
+  - {fileID: 515340673}
+  - {fileID: 515340672}
+  - {fileID: 515340671}
+  - {fileID: 515340670}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
