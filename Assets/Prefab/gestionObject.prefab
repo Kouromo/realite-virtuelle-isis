@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1460658528158388261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409669816669148145}
+  - component: {fileID: 2833178947094008394}
+  m_Layer: 0
+  m_Name: gestionObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409669816669148145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460658528158388261}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.08184, y: 0, z: 3.32529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2833178947094008394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460658528158388261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4710523ad5517584d993e97449e59e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::gestionObject
+  object1: {fileID: 0}
+  object2: {fileID: 0}
+  list_objets:
+  - nom: Repas
+    description: Vous aurez faim
+    chip: 50
+    image: {fileID: 21300000, guid: 088c3ff9d34cf9341a03f6fa24e293ea, type: 3}
+  - nom: Boisson
+    description: Vous aurez soif
+    chip: 50
+    image: {fileID: 21300000, guid: cfda335492f41714aa82aa0361074bbf, type: 3}
+  - nom: Pull
+    description: Vous allez tomber malade
+    chip: 50
+    image: {fileID: 21300000, guid: 399c6df4e914bb7438ef8bd1bee6e38e, type: 3}
+  - nom: Pantalon
+    description: "Vous serez humili\xE9 en public"
+    chip: 50
+    image: {fileID: 21300000, guid: fac448a6b03e9db49b30e2c86cec6663, type: 3}
+  - nom: Montre de papi
+    description: "Papi vous d\xE9h\xE9rit\xE9"
+    chip: 100
+    image: {fileID: 21300000, guid: 0500ffd4cf9e13d489bf5895d78f0c8c, type: 3}
+  - nom: Lunette de vue
+    description: "La nettet\xE9 de l'\xE9cran va diminuer"
+    chip: 100
+    image: {fileID: 21300000, guid: 5cb0d43f14ead0747a4c1cc37c754388, type: 3}
+  - nom: Alliance de ton/ta conjoint(e)
+    description: Vous allez vous faire quitter
+    chip: 250
+    image: {fileID: 21300000, guid: 3af8a0dca68865c4e84822975571d059, type: 3}
+  - nom: Enfant
+    description: Ton/ta conjoint(e) va vous quitter pour le garagiste
+    chip: 1000
+    image: {fileID: 21300000, guid: 5de5f159eee00364d97d4ee832e4d6b8, type: 3}
+  - nom: Voiture de ton/ta conjoint(e)
+    description: Ton/ta conjoint(e) va vous quitter pour le garagiste
+    chip: 250
+    image: {fileID: 21300000, guid: ed782be8ac7ab3a40a217fa97f8f568d, type: 3}
+  - nom: Vente de rein
+    description: "Vous devez uriner toute les minutes et vous avez de grave probl\xE8me
+      de sant\xE9"
+    chip: 500
+    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
+  - nom: "M\xE9dicaments essentiels \xE0 ton p\xE8re"
+    description: "Votre p\xE8re risque de rendre l\u2019\xE2me"
+    chip: 500
+    image: {fileID: 21300000, guid: 4d5c75e79c9c28740b5bc955f738a138, type: 3}
+  - nom: "Hypoth\xE9que de la maison"
+    description: "Vous abandonnez votre enfant \xE0 un dangereux r\xE9seau Albanais "
+    chip: 1000
+    image: {fileID: 21300000, guid: 2a984b074472ab047975dbbd213c86fc, type: 3}
+  - nom: "Sacrifier son \xE2me"
+    description: "Vous condamnez vous et votre famille au purgatoire pour tous les
+      p\xE9ch\xE9s de l\u2019humanit\xE9"
+    chip: 10000
+    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
+  card: {fileID: 0}
+  sensor: {fileID: 0}
