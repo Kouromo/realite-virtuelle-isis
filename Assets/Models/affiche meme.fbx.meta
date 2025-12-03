@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d695b135f2f244a4b9c2781de5b220cd
+guid: 0be1860a2568d9644a662156ff609fd0
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,48 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Classic_7_Fruits_1
-    second: {fileID: 2800000, guid: f05a9c46af4d10d42832559d330a977d, type: 3}
+      name: casino
+    second: {fileID: 2800000, guid: ed1113beadd81384186fed6f0523ea5d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: machine_phong4_BaseColor
-    second: {fileID: 2800000, guid: ff7d5996666b34e48a32f35e468ecd95, type: 3}
+      name: casino meme
+    second: {fileID: 2800000, guid: 06cc7655605b62349ad4803bffcb7d2d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: rouleau machine a sous
-    second: {fileID: 2800000, guid: 2b40343346b3ca048ac8cb74e9754f86, type: 3}
+      name: diable yeux
+    second: {fileID: 2800000, guid: 7f049ebf490fe674c98fa484bf9d2431, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: slot machine_phong1_color
-    second: {fileID: 2800000, guid: b98817aac1825084e8a1e1ffcd43f173, type: 3}
+      name: diable yeux millieu
+    second: {fileID: 2800000, guid: 0b99535d8d82eed40854dd9f9a031133, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: slot machine_phong1_emissive
-    second: {fileID: 2800000, guid: b79168ad184dd1342abb315935e3b4ec, type: 3}
+      name: f5fa9869-3070-4ba8-ab9a-027dea18bfa6
+    second: {fileID: 2800000, guid: 4a15cbea213e176409c7183417971fa7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: slot machine_phong1_metalness
-    second: {fileID: 2800000, guid: 4adb0abc093909e4daf49db418b0920a, type: 3}
+      name: plank_flooring_04_diff_1k
+    second: {fileID: 2800000, guid: 2086a2f58b8735143b030cd414d28a11, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: slot machine_phong1_nmap
-    second: {fileID: 2800000, guid: ce755389097d4634693dc5009037391c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: slot machine_phong1_rough
-    second: {fileID: 2800000, guid: 3353cf19f13e28f43bb5d5cf9f65e67d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2800000, guid: 3c06ed78daf7f544a94d986b04c2c049, type: 3}
+      name: "t\xE9l\xE9charg\xE9"
+    second: {fileID: 2800000, guid: 2549d65d428b55247bccff3fe1d4c2e7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -78,16 +68,16 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 10
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -124,7 +114,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -136,14 +126,14 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 10
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
