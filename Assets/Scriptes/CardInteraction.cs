@@ -15,13 +15,14 @@ public class CardInteraction : MonoBehaviour
     public TMP_Text moneyText;
     public GameObject manetteDroite;
     public InputAction primaryButton_Pay;
-    private bool isCardVisible = false;
+    private bool isCardVisible = true;
 
 
 
     public void Start()
     {
         moneyText.text = money.ToString();
+        this.gameObject.transform.position = manetteDroite.transform.position;
     }
 
     private void Update()
@@ -30,6 +31,8 @@ public class CardInteraction : MonoBehaviour
         {
             HideShowCard();
         }
+        this.gameObject.transform.position = manetteDroite.transform.position;
+
     }
 
     private void HideShowCard()
@@ -39,15 +42,27 @@ public class CardInteraction : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("collide");
+        if(other.TryGetComponent<CardSensor>(out CardSensor sensor))
+        {
+            InteractWithSensor(sensor);
+            Debug.Log("as CardSensor");
+        }
+    }
     public void InteractWithSensor(CardSensor cardSensor)
     {
+        Debug.Log("fonctionlance");
         if (!isCardVisible)
             return;
 
+        Debug.Log("passe visible");
         ModifyMoney(cardSensor.Value);
+        if(cardSensor.Value!=0)
+            manetteDroite.GetComponent<HapticImpulsePlayer>().SendHapticImpulse(amplitude, duration);
         cardSensor.Value = 0; // Empeche les interactions multiples
 
-        manetteDroite.GetComponent<HapticImpulsePlayer>().SendHapticImpulse(amplitude, duration);
     }
 
     private void ModifyMoney(int value)
