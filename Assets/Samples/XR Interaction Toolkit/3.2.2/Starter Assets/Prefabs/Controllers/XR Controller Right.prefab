@@ -1056,16 +1056,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
+      propertyPath: primaryButton_Pay.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
       propertyPath: buttonA.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
       value: db310617-694b-4005-89c8-7ec09f9aa1be
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
+      propertyPath: primaryButton_Pay.m_SingletonActionBindings.Array.data[0].m_Id
+      value: ea6c8490-073a-4b0c-81d4-d0e87f5ab03e
       objectReference: {fileID: 0}
     - target: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
       propertyPath: buttonA.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
       value: <XRController>{RightHand}/{PrimaryButton}
       objectReference: {fileID: 0}
     - target: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
+      propertyPath: primaryButton_Pay.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>{RightHand}/{PrimaryButton}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
       propertyPath: buttonA.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
       value: Button A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965853918475078111, guid: 113630fe59308444e814607d07b65739, type: 3}
+      propertyPath: primaryButton_Pay.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Primary Button_Pay
       objectReference: {fileID: 0}
     - target: {fileID: 3936465174578765706, guid: 113630fe59308444e814607d07b65739, type: 3}
       propertyPath: m_Name

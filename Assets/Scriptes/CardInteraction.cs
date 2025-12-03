@@ -14,6 +14,8 @@ public class CardInteraction : MonoBehaviour
     public float duration = 0.4f;  // en secondes  
     public TMP_Text moneyText;
     public GameObject manetteDroite;
+    public InputAction primaryButton_Pay;
+    private bool isCardVisible = false;
 
 
 
@@ -24,7 +26,7 @@ public class CardInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Pay"))
+        if (primaryButton_Pay.WasPressedThisFrame())
         {
             HideShowCard();
         }
@@ -32,12 +34,16 @@ public class CardInteraction : MonoBehaviour
 
     private void HideShowCard()
     {
-        this.gameObject.SetActive(!this.gameObject.activeSelf);
+        isCardVisible = !isCardVisible;
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(isCardVisible);
     }
 
 
     public void InteractWithSensor(CardSensor cardSensor)
     {
+        if (!isCardVisible)
+            return;
+
         ModifyMoney(cardSensor.Value);
         cardSensor.Value = 0; // Empeche les interactions multiples
 
