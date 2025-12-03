@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class RollingSlot : MonoBehaviour
 {
-    public bool canRoll = false;
     private const byte NUM_SYMBOLS = 5;
     private float angleCran;
 
     private float angleCranCalibrate = 50;
 
-    public CardSensor cardSensor;
+
     public GameObject[] rollers;
 
     [Tooltip("Rotation speed in degrees per second")]
@@ -39,8 +38,7 @@ public class RollingSlot : MonoBehaviour
 
     public void PullLever()
     {
-        Debug.Log(isSpinning.ToString() + canRoll.ToString());
-        if (isSpinning || !canRoll)
+        if (isSpinning)
             return;
 
         if (rollers == null || rollers.Length == 0)
@@ -56,8 +54,6 @@ public class RollingSlot : MonoBehaviour
         if (remainingRollers == 0)
         {
             isSpinning = false;
-            canRoll = false;
-            cardSensor.Value = -50;
             return;
         }
 
