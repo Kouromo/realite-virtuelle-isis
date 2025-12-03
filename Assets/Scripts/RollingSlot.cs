@@ -9,7 +9,7 @@ public class RollingSlot : MonoBehaviour
 
     private float angleCranCalibrate = 50;
 
-
+    public CardSensor cardSensor;
     public GameObject[] rollers;
 
     [Tooltip("Rotation speed in degrees per second")]
@@ -56,6 +56,7 @@ public class RollingSlot : MonoBehaviour
         {
             isSpinning = false;
             canRoll = false;
+            cardSensor.Value = -50;
             return;
         }
 
