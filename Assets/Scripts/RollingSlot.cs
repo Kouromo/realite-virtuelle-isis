@@ -8,6 +8,7 @@ public class RollingSlot : MonoBehaviour
 
     private float angleCranCalibrate = 50;
 
+
     public GameObject[] rollers;
 
     [Tooltip("Rotation speed in degrees per second")]
@@ -55,6 +56,7 @@ public class RollingSlot : MonoBehaviour
             yield return null;
         }
 
+        float durationStopCurrent = 0;
         Vector3 rotationFinale = rouleau.transform.localEulerAngles;
         float currentX = rouleau.transform.localEulerAngles.x;
         int indexCranActuel = Mathf.RoundToInt(currentX / angleCran);
