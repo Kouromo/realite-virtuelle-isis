@@ -1518,6 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535bdf16c1c02ef4a83a826091281cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollingSlot
+  audioSource: {fileID: 0}
   rollers:
   - {fileID: 6178085991061294977}
   - {fileID: 5775349363246670247}
@@ -1525,9 +1526,7 @@ MonoBehaviour:
   - {fileID: 3816316688481609514}
   rotationSpeed: 1000
   minSpinDuration: 1
-  stopDuration: 1
-  symbolAngleCalibration: 50
-  audioSource: {fileID: 2259336937930477993}
+  maxSpinDuration: 3
 --- !u!1 &7719908835935048261
 GameObject:
   m_ObjectHideFlags: 0
