@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0500ffd4cf9e13d489bf5895d78f0c8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3af8a0dca68865c4e84822975571d059, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1907,14 +1907,61 @@ MonoBehaviour:
   object1: {fileID: 1149087044}
   object2: {fileID: 415864565}
   list_objets:
-  - nom: Montre
-    description: "Offert(e) \xE0 mes 25 ans"
-    chip: 45
+  - nom: Repas
+    description: Vous aurez faim
+    chip: 50
+    image: {fileID: 21300000, guid: 088c3ff9d34cf9341a03f6fa24e293ea, type: 3}
+  - nom: Boisson
+    description: Vous aurez soif
+    chip: 50
+    image: {fileID: 21300000, guid: cfda335492f41714aa82aa0361074bbf, type: 3}
+  - nom: Pull
+    description: Vous allez tomber malade
+    chip: 50
+    image: {fileID: 21300000, guid: 399c6df4e914bb7438ef8bd1bee6e38e, type: 3}
+  - nom: Pantalon
+    description: "Vous serez humili\xE9 en public"
+    chip: 50
+    image: {fileID: 21300000, guid: fac448a6b03e9db49b30e2c86cec6663, type: 3}
+  - nom: Montre de papi
+    description: "Papi vous d\xE9h\xE9rit\xE9"
+    chip: 100
     image: {fileID: 21300000, guid: 0500ffd4cf9e13d489bf5895d78f0c8c, type: 3}
-  - nom: Alliance
-    description: "Jeune mari\xE9(e)"
-    chip: 30
-    image: {fileID: 21300000, guid: 3af8a0dca68865c4e84822975571d059, type: 3}
+  - nom: Lunette de vue
+    description: "La nettet\xE9 de l'\xE9cran va diminuer"
+    chip: 100
+    image: {fileID: 21300000, guid: 5cb0d43f14ead0747a4c1cc37c754388, type: 3}
+  - nom: Alliance de ton/ta conjoint(e)
+    description: Vous allez vous faire quitter
+    chip: 250
+    image: {fileID: 0}
+  - nom: Enfant
+    description: Ton/ta conjoint(e) va vous quitter pour le garagiste
+    chip: 1000
+    image: {fileID: 0}
+  - nom: Voiture de ton/ta conjoint(e)
+    description: Ton/ta conjoint(e) va vous quitter pour le garagiste
+    chip: 250
+    image: {fileID: 0}
+  - nom: "Hypoth\xE9que de la maison"
+    description: "Vous abandonnez votre enfant \xE0 un dangereux r\xE9seau Albanais "
+    chip: 1000
+    image: {fileID: 0}
+  - nom: "Sacrifier son \xE2me"
+    description: "Vous condamnez vous et votre famille au purgatoire pour tous les
+      p\xE9ch\xE9s de l\u2019humanit\xE9"
+    chip: 10000
+    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
+  - nom: "Sacrifier son \xE2me"
+    description: "Vous condamnez vous et votre famille au purgatoire pour tous les
+      p\xE9ch\xE9s de l\u2019humanit\xE9"
+    chip: 10000
+    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
+  - nom: "Sacrifier son \xE2me"
+    description: "Vous condamnez vous et votre famille au purgatoire pour tous les
+      p\xE9ch\xE9s de l\u2019humanit\xE9"
+    chip: 10000
+    image: {fileID: 21300000, guid: e77df0cb7eec5a942a2c31f4935a5699, type: 3}
 --- !u!4 &1993584626
 Transform:
   m_ObjectHideFlags: 0

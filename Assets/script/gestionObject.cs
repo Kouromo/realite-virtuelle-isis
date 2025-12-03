@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 
 public class gestionObject : MonoBehaviour
 {
@@ -9,57 +9,78 @@ public class gestionObject : MonoBehaviour
     {
         public string nom;
         public string description;
-        public string chip;  // on garde le chip comme string
+        public string chip;
         public Sprite image;
     }
 
-    [Header("GameObjects à remplir")]
+    [Header("Objets à afficher")]
     public GameObject object1;
     public GameObject object2;
 
     [Header("Liste d'objets")]
-    [SerializeField]
-    Objet[] list_objets;
+    [SerializeField] private Objet[] list_objets;
 
-    Objet[] current_list_objets;
+    private int index = 0;
 
     void Start()
     {
-        // Cloner et trier la liste par chip décroissant
-        current_list_objets = (Objet[])list_objets.Clone();
-        System.Array.Sort(current_list_objets, 
-            (a, b) => int.Parse(b.chip).CompareTo(int.Parse(a.chip)));
+        AfficherPaire();
+    }
 
-        if (current_list_objets.Length >= 2)
+    void AfficherPaire()
+    {
+        // Plus d'objets → tout cacher
+        if (index >= list_objets.Length)
         {
-            SetGameObject(object1, current_list_objets[0]);
-            SetGameObject(object2, current_list_objets[1]);
+            object1.SetActive(false);
+            object2.SetActive(false);
+            return;
+        }
+
+        // Afficher le premier de la paire
+        SetGameObject(object1, list_objets[index]);
+        object1.SetActive(true);
+
+        // Vérifier si un deuxième existe
+        if (index + 1 < list_objets.Length)
+        {
+            SetGameObject(object2, list_objets[index + 1]);
+            object2.SetActive(true);
+        }
+        else
+        {
+            // S'il reste 1 seul objet → cacher le 2e
+            object2.SetActive(false);
         }
     }
 
     void SetGameObject(GameObject obj, Objet data)
     {
-        if (obj == null) return;
-
-        // Récupérer tous les Text dans les enfants
         TextMeshProUGUI[] texts = obj.GetComponentsInChildren<TextMeshProUGUI>();
+        texts[0].text = data.nom;
+        texts[1].text = data.description;
+        texts[2].text = data.chip + " Jetons";
 
-        // On suppose : 
-        // texts[0] = nom
-        // texts[1] = description
-        // texts[2] = chip
-        if (texts.Length >= 3)
-        {
-            texts[0].text = data.nom;
-            texts[1].text = data.description;
-            texts[2].text = data.chip + "Jetons";
-        }
-
-        // Assigner l'image
         Image img = obj.transform.Find("image_object").GetComponent<Image>();
-        if (img != null)
-        {
-            img.sprite = data.image;
-        }
+        img.sprite = data.image;
+    }
+
+    // ---------- MÉTHODES PUBLIQUES POUR CHOISIR ----------
+    public void ChoisirObjet1()
+    {
+        Debug.Log("Objet choisi : index " + index);
+        PasserALaSuite();
+    }
+
+    public void ChoisirObjet2()
+    {
+        Debug.Log("Objet choisi : index " + (index + 1));
+        PasserALaSuite();
+    }
+
+    void PasserALaSuite()
+    {
+        index += 2;
+        AfficherPaire();
     }
 }
