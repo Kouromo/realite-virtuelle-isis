@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -12,43 +13,26 @@ public class CardInteraction : MonoBehaviour
     public float amplitude = 0.5f; // intensité [0-1]  
     public float duration = 0.2f;  // en secondes  
     public TMP_Text moneyText;
-    private IXRHapticImpulseChannel hapticsChannel = null;
+    public GameObject manetteDroite;
 
-    [Header("Teleportation System")]
-    public InputActionProperty buttonA;
-    //public XRDirectInteractor rightHandInteractor;
-    public Transform rightHandInteractor;
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabbable;
 
 
     public void Start()
     {
         moneyText.text = money.ToString();
-        grabbable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
     }
 
     private void Update()
     {
-        if (buttonA.action.WasPressedThisFrame())
+        if (Input.GetButtonDown("Pay"))
         {
-            TeleportIntoHand();
+            HideShowCard();
         }
     }
 
-    private void TeleportIntoHand()
+    private void HideShowCard()
     {
-        if (rightHandInteractor == null)
-            return;
-
-
-        transform.position = new Vector3(
-            rightHandInteractor.transform.position.x,
-            rightHandInteractor.transform.position.y + 0.1f,
-            rightHandInteractor.transform.position.z + 0.1f
-        );
-        transform.rotation = rightHandInteractor.transform.rotation;
-
-        //rightHandInteractor.interactionManager.SelectEnter((IXRSelectInteractor) rightHandInteractor, grabbable);
+        this.gameObject.SetActive(!this.gameObject.activeSelf);
     }
 
 
@@ -56,11 +40,7 @@ public class CardInteraction : MonoBehaviour
     {
         ModifyMoney(value);
 
-        hapticsChannel ??= GetComponent<IXRHapticImpulseChannel>();
-        if (hapticsChannel != null)
-        {
-            hapticsChannel.SendHapticImpulse(amplitude, duration);
-        }
+        manetteDroite.GetComponent<HapticImpulsePlayer>().SendHapticImpulse(amplitude, duration);
     }
 
     private void ModifyMoney(int value)
@@ -69,13 +49,4 @@ public class CardInteraction : MonoBehaviour
         moneyText.text = money.ToString();
     }
 
-    public void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        hapticsChannel = args.interactorObject.transform.GetComponent<IXRHapticImpulseChannel>();
-    }
-
-    public void OnSelectExited(SelectExitEventArgs args)
-    {
-        hapticsChannel = null;
-    }
 }
