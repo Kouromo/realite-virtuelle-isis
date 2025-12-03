@@ -10,8 +10,8 @@ public class CardInteraction : MonoBehaviour
 {
     [Header("Monetary System")]
     private int money = 100;
-    public float amplitude = 0.5f; // intensité [0-1]  
-    public float duration = 0.2f;  // en secondes  
+    public float amplitude = 0.7f; // intensité [0-1]  
+    public float duration = 0.4f;  // en secondes  
     public TMP_Text moneyText;
     public GameObject manetteDroite;
 
@@ -36,9 +36,10 @@ public class CardInteraction : MonoBehaviour
     }
 
 
-    public void InteractWithSensor(int value)
+    public void InteractWithSensor(CardSensor cardSensor)
     {
-        ModifyMoney(value);
+        ModifyMoney(cardSensor.Value);
+        cardSensor.Value = 0; // Empeche les interactions multiples
 
         manetteDroite.GetComponent<HapticImpulsePlayer>().SendHapticImpulse(amplitude, duration);
     }
