@@ -39,6 +39,7 @@ public class RollingSlot : MonoBehaviour
 
     public void PullLever()
     {
+        Debug.Log(isSpinning.ToString() + canRoll.ToString());
         if (isSpinning || !canRoll)
             return;
 
