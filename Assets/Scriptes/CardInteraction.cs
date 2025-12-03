@@ -50,6 +50,7 @@ public class CardInteraction : MonoBehaviour
             InteractWithSensor(sensor);
             if (sensor.rollingSlot != null) //decommenter lors du merge avec slot machine
             {
+                Debug.Log("as RollingSlot");
                 sensor.rollingSlot.canRoll = true;
             }
             Debug.Log("as CardSensor");
