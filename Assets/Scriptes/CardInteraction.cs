@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class CardInteraction : MonoBehaviour
 {
     [Header("Monetary System")]
-    private int money = 100;
+    public int money = 100;
     public float amplitude = 0.7f; // intensité [0-1]  
     public float duration = 0.4f;  // en secondes  
     public TMP_Text moneyText;
@@ -31,7 +31,7 @@ public class CardInteraction : MonoBehaviour
         {
             HideShowCard();
         }
-        this.gameObject.transform.position = manetteDroite.transform.position;
+        this.gameObject.transform.position = manetteDroite.transform.position + new Vector3(0,0,0.2f);
 
     }
 
@@ -48,6 +48,10 @@ public class CardInteraction : MonoBehaviour
         if(other.TryGetComponent<CardSensor>(out CardSensor sensor))
         {
             InteractWithSensor(sensor);
+            //if(sensor.rollingSlot != null) //decommenter lors du merge avec slot machine
+            //{
+            //    rollingSlot.canRoll = true;
+            //}
             Debug.Log("as CardSensor");
         }
     }
