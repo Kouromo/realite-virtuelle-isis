@@ -3207,6 +3207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7487316994502860910, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
+      propertyPath: cardSensor
+      value: 
+      objectReference: {fileID: 772692608}
     - target: {fileID: 8028410710420413213, guid: 0d75acaedce22604e8f9f28b2f5c1f40, type: 3}
       propertyPath: m_Name
       value: slot
