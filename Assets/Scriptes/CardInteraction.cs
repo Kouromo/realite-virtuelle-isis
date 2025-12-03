@@ -48,10 +48,10 @@ public class CardInteraction : MonoBehaviour
         if(other.TryGetComponent<CardSensor>(out CardSensor sensor))
         {
             InteractWithSensor(sensor);
-            //if(sensor.rollingSlot != null) //decommenter lors du merge avec slot machine
-            //{
-            //    rollingSlot.canRoll = true;
-            //}
+            if (sensor.rollingSlot != null) //decommenter lors du merge avec slot machine
+            {
+                sensor.rollingSlot.canRoll = true;
+            }
             Debug.Log("as CardSensor");
         }
     }

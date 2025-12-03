@@ -9,7 +9,7 @@ public class InterpreteResult : MonoBehaviour
     private float angleCranCalibrate = 50;
     private int jetonsGagnes = 100;
     private List<int> rolls;
-    //public CardSensor cardSensor;
+    public CardSensor cardSensor;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class InterpreteResult : MonoBehaviour
         rolls = new List<int>();
         GetRolls();
         int gain = CalculerGain(rolls);
-        //cardSensor.Value = gain;
+        cardSensor.Value = gain;
         return gain;
     }
 

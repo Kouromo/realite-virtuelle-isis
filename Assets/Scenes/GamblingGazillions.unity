@@ -1319,6 +1319,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734783561}
   m_Mesh: {fileID: -5209673357947124435, guid: d695b135f2f244a4b9c2781de5b220cd, type: 3}
+--- !u!1001 &772692607
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.453
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.482
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.597
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491000944089796173, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784992592670087671, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: m_Name
+      value: CardSensor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850127193780839673, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+      propertyPath: rollingSlot
+      value: 
+      objectReference: {fileID: 1009944120}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+--- !u!114 &772692608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2850127193780839673, guid: 225c01269daaf2540a0a10f2b5600307, type: 3}
+  m_PrefabInstance: {fileID: 772692607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c64f9dad0309c4c947845987ec027b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardSensor
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,6 +2726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2750054338633105013}
   - component: {fileID: 2750054338633105014}
+  - component: {fileID: 2750054338633105015}
   m_Layer: 0
   m_Name: slot original
   m_TagString: Untagged
@@ -3345,6 +3418,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2750054338633105015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627136520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eb4d55fab32a848af5fd155bb9a6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InterpreteResult
+  rollers:
+  - {fileID: 630385495}
+  - {fileID: 221896694}
+  - {fileID: 615605036}
+  - {fileID: 261110002}
+  cardSensor: {fileID: 772692608}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3357,3 +3448,4 @@ SceneRoots:
   - {fileID: 2072180241}
   - {fileID: 39877124}
   - {fileID: 1313104999}
+  - {fileID: 772692607}

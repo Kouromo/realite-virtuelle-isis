@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RollingSlot : MonoBehaviour
 {
+    public bool canRoll = false;
     private const byte NUM_SYMBOLS = 5;
 
     [Header("Rollers")]
