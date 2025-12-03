@@ -37,12 +37,24 @@ public class RollingSlot : MonoBehaviour
     {
         for (int i = 0; i < rollers.Length; i++)
         {
+            GameObject currentRoller = rollers[i];
+
+            Vector3 currentRotation = currentRoller.transform.localEulerAngles;
+            float currentX = currentRotation.x;
+
+            int indexCranActuel = Mathf.RoundToInt((currentX - angleCranCalibrate) / angleCran);
+            float positionBienCranee = indexCranActuel * angleCran + angleCranCalibrate;
+
+
+            currentRoller.transform.localEulerAngles = new Vector3(positionBienCranee, currentRotation.y, currentRotation.z);
+
             int notchRandomFinal = Random.Range(0, NUM_SYMBOLS);
 
             float angleCible = notchRandomFinal * angleCran + angleCranCalibrate;
             float MoreSpin = 360 * NUM_SYMBOLS;
 
-            StartCoroutine(RotateAndStop(rollers[i], angleCible + MoreSpin, duration));
+            // Démarrer la rotation depuis cette position normalisée
+            StartCoroutine(RotateAndStop(currentRoller, angleCible + MoreSpin, duration));
         }
     }
 
@@ -57,29 +69,32 @@ public class RollingSlot : MonoBehaviour
         }
 
         float durationStopCurrent = 0;
-        Vector3 rotationFinale = rouleau.transform.localEulerAngles;
-        float currentX = rouleau.transform.localEulerAngles.x;
-        int indexCranActuel = Mathf.RoundToInt(currentX / angleCran);
-        float positionActuelleBienCranee = indexCranActuel * angleCran;
 
-        float angleARoule = rotationTotaleCible - currentX;
+        // Calcul de la cible finale uniquement (sans l'excès de 360*NUM_SYMBOLS)
+        float angleFinalPrecise = rotationTotaleCible % 360f;
+
+        // Stocker la rotation de départ pour le lissage
+        float angleDepart = rouleau.transform.localEulerAngles.x;
 
         while (durationStopCurrent < durationStop)
         {
             float t = durationStopCurrent / durationStop;
+
             float courbeDeceleration = Mathf.Sin(t * Mathf.PI * 0.5f);
 
-            float angleParcouru = Mathf.Lerp(0, angleARoule, courbeDeceleration);
+            float angleActuel = Mathf.LerpAngle(angleDepart, angleFinalPrecise, courbeDeceleration);
 
-            Vector3 newRot = new(positionActuelleBienCranee + angleParcouru, rotationFinale.y, rotationFinale.z);
+            Vector3 newRot = rouleau.transform.localEulerAngles;
+            newRot.x = angleActuel;
             rouleau.transform.localEulerAngles = newRot;
 
             durationStopCurrent += Time.deltaTime;
             yield return null;
         }
 
-        Vector3 rotationFinalePrecise = new(rotationTotaleCible % 360f, rotationFinale.y, rotationFinale.z);
-        rouleau.transform.localEulerAngles = rotationFinalePrecise;
+        Vector3 finalRot = rouleau.transform.localEulerAngles;
+        finalRot.x = angleFinalPrecise;
+        rouleau.transform.localEulerAngles = finalRot;
 
         // TODO: Notifier le script principal que ce rouleau est arrêté
     }
