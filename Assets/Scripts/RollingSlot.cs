@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class RollingSlot : MonoBehaviour
 {
+    //public bool canRoll = false;
+    public CardSensor cardSensor;
+
     private const byte NUM_SYMBOLS = 5;
     private float angleCran;
 
@@ -38,7 +41,7 @@ public class RollingSlot : MonoBehaviour
 
     public void PullLever()
     {
-        if (isSpinning)
+        if (isSpinning ) //|| !canRoll
             return;
 
         if (rollers == null || rollers.Length == 0)
@@ -111,6 +114,8 @@ public class RollingSlot : MonoBehaviour
         if (remainingRollers <= 0)
         {
             isSpinning = false;
+            //canRoll = false;
+            cardSensor.Value = -50;
             Debug.Log("All rollers stopped");
         }
     }

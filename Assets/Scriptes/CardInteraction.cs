@@ -72,7 +72,7 @@ public class CardInteraction : MonoBehaviour
 
     private void ModifyMoney(int value)
     {
-        if (value > money)
+        if ( money + value <0 )
         {
             money = 0;
         }
