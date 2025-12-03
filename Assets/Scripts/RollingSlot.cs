@@ -3,129 +3,131 @@ using UnityEngine;
 
 public class RollingSlot : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip stopSound;
+
     private const byte NUM_SYMBOLS = 5;
+    private float symbolAngle;
+    private float symbolAngleCalibration = 50f;
 
     [Header("Rollers")]
     public GameObject[] rollers;
-
-    [Header("Settings")]
-    public float rotationSpeed = 1000f;
-    public float minSpinDuration = 1f;
-    public float stopDuration = 1f;
-    public float symbolAngleCalibration = 50f;
-
-    [Header("Slot sound")]
-    public AudioSource audioSource;
-
     private Coroutine[] rotationCoroutines;
-    private bool isSpinning;
-    private int remainingRollers;
-    private float symbolAngle;
 
+    [Tooltip("Rotation speed in degrees per second")]
+    public float rotationSpeed = 1000f;
+
+    [Header("Durations")]
+    public float minSpinDuration = 1f;
+    public float maxSpinDuration = 3f;
+
+    private float stopDuration = 1f;
+
+
+    private bool isSpinning = false;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        symbolAngle = 360f / NUM_SYMBOLS;
-        if (rollers != null)
-            rotationCoroutines = new Coroutine[rollers.Length];
+        symbolAngle = 360f / NUM_SYMBOLS; // Using 'f' for float literal
+        rotationCoroutines = new Coroutine[rollers.Length];
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // No code needed here
     }
 
     public void PullLever()
     {
-        if (isSpinning || rollers == null || rollers.Length == 0)
+        if (isSpinning)
+        {
+            Debug.Log("Slot machine is already spinning. Wait for it to stop!");
             return;
+        }
 
         isSpinning = true;
-        remainingRollers = 0;
-
-        // ensure array matches rollers length
-        if (rotationCoroutines == null || rotationCoroutines.Length != rollers.Length)
-            rotationCoroutines = new Coroutine[rollers.Length];
 
         for (int i = 0; i < rollers.Length; i++)
         {
-            var roller = rollers[i];
-            if (roller == null)
-                continue;
+            GameObject currentRoller = rollers[i];
 
-            remainingRollers++;
+            Vector3 currentRotation = currentRoller.transform.localEulerAngles;
+            float currentX = currentRotation.x;
 
-            // snap to nearest notch to avoid visual drift
-            var rot = roller.transform.localEulerAngles;
-            float currentX = NormalizeAngle(rot.x);
-            int notch = Mathf.RoundToInt((currentX - symbolAngleCalibration) / symbolAngle);
-            roller.transform.localEulerAngles = new Vector3(notch * symbolAngle + symbolAngleCalibration, rot.y, rot.z);
+            int currentNotchIndex = Mathf.RoundToInt((currentX - symbolAngleCalibration) / symbolAngle);
+            float snappedPosition = currentNotchIndex * symbolAngle + symbolAngleCalibration;
+            currentRoller.transform.localEulerAngles = new Vector3(snappedPosition, currentRotation.y, currentRotation.z);
 
-            int finalNotch = Random.Range(0, NUM_SYMBOLS);
-            float target = finalNotch * symbolAngle + symbolAngleCalibration;
-            float extraSpins = 360f * NUM_SYMBOLS; // at least one full set
+            int finalNotchRandom = Random.Range(0, NUM_SYMBOLS);
+            float targetAngle = finalNotchRandom * symbolAngle + symbolAngleCalibration;
+            float extraSpins = 360f * NUM_SYMBOLS;
 
-            // stop existing coroutine for this roller if any
             if (rotationCoroutines[i] != null)
-            {
                 StopCoroutine(rotationCoroutines[i]);
-                rotationCoroutines[i] = null;
-            }
 
-            rotationCoroutines[i] = StartCoroutine(RotateAndStop(roller, target + extraSpins, minSpinDuration, i));
+            rotationCoroutines[i] = StartCoroutine(RotateAndStop(currentRoller, targetAngle + extraSpins, minSpinDuration, i));
         }
-
-        // if no valid rollers, reset flag
-        if (remainingRollers == 0)
-            isSpinning = false;
     }
 
-    IEnumerator RotateAndStop(GameObject roller, float addedRotation, float spinDuration, int index)
+    IEnumerator RotateAndStop(GameObject roller, float totalTargetRotation, float minimumDuration, int rollerIndex)
     {
-        float t = 0f;
+        float elapsedTime = 0f;
 
-        // continuous spin phase
-        while (t < spinDuration)
+        while (elapsedTime < minimumDuration)
         {
             roller.transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime, Space.Self);
-            t += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // compute target relative to current angle to respect initial rotation
-        float current = NormalizeAngle(roller.transform.localEulerAngles.x);
-        float absoluteTarget = current + addedRotation;
-        float finalAngle = Mathf.Repeat(absoluteTarget, 360f);
+        float currentStopDuration = 0f;
 
-        float elapsed = 0f;
-        float startAngle = NormalizeAngle(roller.transform.localEulerAngles.x);
+        float preciseFinalAngle = totalTargetRotation % 360f;
+        float startingAngle = roller.transform.localEulerAngles.x;
 
-        // smooth stop using ease-out (sin)
-        while (elapsed < stopDuration)
+        while (currentStopDuration < stopDuration)
         {
-            float u = Mathf.Clamp01(elapsed / stopDuration);
-            float ease = Mathf.Sin(u * Mathf.PI * 0.5f);
-            float angle = Mathf.LerpAngle(startAngle, finalAngle, ease);
-            var newRot = roller.transform.localEulerAngles;
-            newRot.x = angle;
+            float t = currentStopDuration / stopDuration;
+            float decelerationCurve = Mathf.Sin(t * Mathf.PI * 0.5f);
+
+            float currentAngle = Mathf.LerpAngle(startingAngle, preciseFinalAngle, decelerationCurve);
+
+            Vector3 newRot = roller.transform.localEulerAngles;
+            newRot.x = currentAngle;
             roller.transform.localEulerAngles = newRot;
 
-            elapsed += Time.deltaTime;
+            currentStopDuration += Time.deltaTime;
             yield return null;
         }
 
-        var final = roller.transform.localEulerAngles;
-        final.x = finalAngle;
-        roller.transform.localEulerAngles = final;
+        Vector3 finalRot = roller.transform.localEulerAngles;
+        finalRot.x = preciseFinalAngle;
+        roller.transform.localEulerAngles = finalRot;
 
-        if (audioSource != null)
-            audioSource.Play();
+        audioSource.PlayOneShot(stopSound);
 
-        // mark coroutine finished
-        if (rotationCoroutines != null && index >= 0 && index < rotationCoroutines.Length)
-            rotationCoroutines[index] = null;
-
-        remainingRollers--;
-        if (remainingRollers <= 0)
-        {
-            isSpinning = false;
-            Debug.Log("All rollers stopped.");
-        }
+        RollerStopped(rollerIndex);
     }
 
-    private static float NormalizeAngle(float a) => Mathf.Repeat(a, 360f);
+    /// <summary>
+    /// Checks if all rollers have finished spinning.
+    /// </summary>
+    private void RollerStopped(int rollerIndex)
+    {
+        // Indicate that this specific roller's coroutine has finished
+        rotationCoroutines[rollerIndex] = null;
+
+        // Check if ANY coroutine is still running
+        for (int i = 0; i < rotationCoroutines.Length; i++)
+            if (rotationCoroutines[i] != null)
+                return;
+
+        isSpinning = false;
+        Debug.Log("All rollers stopped. Machine is ready to be pulled again!");
+
+        // TODO: Add logic here for checking the winning condition.
+    }
 }

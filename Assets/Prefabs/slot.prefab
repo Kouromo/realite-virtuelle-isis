@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1771855989053732674}
-  - component: {fileID: 2259336937930477993}
+  - component: {fileID: 4733149179466569060}
   m_Layer: 0
   m_Name: slot
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 2929302822350039904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2259336937930477993
+--- !u!82 &4733149179466569060
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,8 +46,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: d087fdfca6ded9f4b8e2b7010888ab1a, type: 3}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535bdf16c1c02ef4a83a826091281cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollingSlot
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 4733149179466569060}
   rollers:
   - {fileID: 6178085991061294977}
   - {fileID: 5775349363246670247}
